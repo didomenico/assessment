@@ -41,5 +41,8 @@
   <ItemGroup>
     <Compile Include="SequenceAnalysis.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

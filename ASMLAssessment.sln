@@ -3,21 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Runner", "Runner\Runner.csproj", "{CAE87F6B-DA04-4786-A25C-B1E7093A2B75}"
-	ProjectSection(ProjectDependencies) = postProject
-		{DA5A6383-B54D-4BCB-AF12-9B1D4CC1E3FD} = {DA5A6383-B54D-4BCB-AF12-9B1D4CC1E3FD}
-		{78A937C8-9F01-4C0C-A267-85FA0296F230} = {78A937C8-9F01-4C0C-A267-85FA0296F230}
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumOfMultiple", "Assessment1\SumOfMultiple\SumOfMultiple.csproj", "{DA5A6383-B54D-4BCB-AF12-9B1D4CC1E3FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumOfMultiple", "SumOfThree\SumOfMultiple.csproj", "{DA5A6383-B54D-4BCB-AF12-9B1D4CC1E3FD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequenceAnalysis", "SequenceAnalysis\SequenceAnalysis.csproj", "{78A937C8-9F01-4C0C-A267-85FA0296F230}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequenceAnalysis", "Assessment1\SequenceAnalysis\SequenceAnalysis.csproj", "{78A937C8-9F01-4C0C-A267-85FA0296F230}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assessment 1", "Assessment 1", "{EA240BDD-6FDA-4393-95E5-CAF3505CC41F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assessment 2", "Assessment 2", "{37274791-2BCD-4716-90CE-6E5FFF971546}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxProductOfThree", "MaxProductOfThree\MaxProductOfThree.csproj", "{4A3A9E33-F7D4-45DC-A544-5E5608628AC2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxProductOfThree", "Assessment2\MaxProductOfThree\MaxProductOfThree.csproj", "{4A3A9E33-F7D4-45DC-A544-5E5608628AC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Runner", "Assessment1\Runner\Runner.csproj", "{CAE87F6B-DA04-4786-A25C-B1E7093A2B75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CAE87F6B-DA04-4786-A25C-B1E7093A2B75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CAE87F6B-DA04-4786-A25C-B1E7093A2B75}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CAE87F6B-DA04-4786-A25C-B1E7093A2B75}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CAE87F6B-DA04-4786-A25C-B1E7093A2B75}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DA5A6383-B54D-4BCB-AF12-9B1D4CC1E3FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DA5A6383-B54D-4BCB-AF12-9B1D4CC1E3FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA5A6383-B54D-4BCB-AF12-9B1D4CC1E3FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,15 +33,19 @@ Global
 		{4A3A9E33-F7D4-45DC-A544-5E5608628AC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A3A9E33-F7D4-45DC-A544-5E5608628AC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A3A9E33-F7D4-45DC-A544-5E5608628AC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAE87F6B-DA04-4786-A25C-B1E7093A2B75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAE87F6B-DA04-4786-A25C-B1E7093A2B75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAE87F6B-DA04-4786-A25C-B1E7093A2B75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAE87F6B-DA04-4786-A25C-B1E7093A2B75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{CAE87F6B-DA04-4786-A25C-B1E7093A2B75} = {EA240BDD-6FDA-4393-95E5-CAF3505CC41F}
 		{DA5A6383-B54D-4BCB-AF12-9B1D4CC1E3FD} = {EA240BDD-6FDA-4393-95E5-CAF3505CC41F}
 		{78A937C8-9F01-4C0C-A267-85FA0296F230} = {EA240BDD-6FDA-4393-95E5-CAF3505CC41F}
 		{4A3A9E33-F7D4-45DC-A544-5E5608628AC2} = {37274791-2BCD-4716-90CE-6E5FFF971546}
+		{CAE87F6B-DA04-4786-A25C-B1E7093A2B75} = {EA240BDD-6FDA-4393-95E5-CAF3505CC41F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D9C00A9-F153-429B-9986-0C84851687FD}

@@ -36,7 +36,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Main.cs" />
+    <Compile Include="Runner.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SequenceAnalysis\SequenceAnalysis.csproj">
+      <Project>{78a937c8-9f01-4c0c-a267-85fa0296f230}</Project>
+      <Name>SequenceAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SumOfMultiple\SumOfMultiple.csproj">
+      <Project>{da5a6383-b54d-4bcb-af12-9b1d4cc1e3fd}</Project>
+      <Name>SumOfMultiple</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

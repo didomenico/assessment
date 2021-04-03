@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assessment1
+namespace MaxProductOfThree
 {
-    public class SequenceAnalysis
+    class MaxProductOfThree
     {
-        public static string Order(string input)
+        static public void Main(String[] args)
         {
-            return input;
         }
     }
 }
