@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Assessment1
 {    
-    class Runner
+    public class Runner
     {
         static readonly Action<string> print = Console.WriteLine;
 

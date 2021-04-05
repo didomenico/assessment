@@ -13,7 +13,7 @@ namespace Assessment1
             foreach(string word in wordArray)
             {
                 if (word == word.ToUpper() &&
-                    word.All(char.IsLetter)) 
+                    word.Any(char.IsNumber) == false) 
                 {
                     upperCaseLetters += word; 
                 }
