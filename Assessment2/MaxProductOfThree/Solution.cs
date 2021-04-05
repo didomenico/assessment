@@ -4,18 +4,26 @@ using System.Linq;
 namespace Assessment2
 {
     class Solution
-    {
-        static readonly Action<string> print = Console.WriteLine;
+    {   
+        static readonly Action<string> print = Console.Write;
+
+        static public void Main(String[] args)
+        {
+            print("===============================\n" +
+                  "MAX. TRIPLET PRODUCT: " + new Solution().solution(
+                    new int[]{-3, 1, 2, -2, 5, 6}).ToString("N0") + "\n" +
+                  "===============================\n");
+        }
 
         public int solution(int[] A)
         {
-            //int[] sorted = new SortedSet<int>(A).ToArray(); // API solution
-            int[] sorted = HeapSort(A);
+            //int[] sorted = new SortedSet<int>(A).ToArray(); // API implementation
+            int[] sorted = HeapSort(A); // Custom implementation
 
             int leftTupleProduct = sorted[0] * sorted[1];
             int rightTupleProduct = sorted[sorted.Length - 3] * sorted[sorted.Length - 2];
-
             int largestTupleProduct = leftTupleProduct > rightTupleProduct ? leftTupleProduct : rightTupleProduct;
+
             return largestTupleProduct * A.Last();
         }
 
@@ -58,58 +66,47 @@ namespace Assessment2
             if(isLeaf) { return array; }
 
             bool hasSingleChild = (n == 2 * i + 2);
-            int larger = hasSingleChild ||
-                         array[left] > array[right] ?
+            int larger = hasSingleChild || array[left] > array[right] ?
                          left : right;
 
-            if (array[larger] > array[i])
-            {
-                (array[i], array[larger]) = (array[larger], array[i]);
-                
+            if (array[i] < array[larger])
+            {   
+                (array[i], array[larger]) = (array[larger], array[i]); // Swap
+
                 array = Heapify(array, larger, n);
             }
             
             return array;
         }        
 
-        static public void Main(String[] args)
-        {            
-            print("===============================\n" +
-                  "MAX. TRIPLET PRODUCT: " + new Solution().solution(
-                    new int[] { 5, 97, 64, -93, 37, 90, -102 } ).ToString("N0"));
-            print("===============================");
-        }
-
         public static void DrawHeap(int[] array, int n)
         {
             Console.Clear();
 
-            print("(n = " + n + ") heapifying:");
+            print("(n = " + n + ") heapifying:\n");
             
-            Console.Write("[");           
+            print("[");           
             for (int i = 0; i < n; i++) { Console.Write(array[i] + " | "); }
             for (int i = n; i < array.Length; i++) { Console.Write("(" + array[i] + ") | "); }
             Console.SetCursorPosition(Console.CursorLeft - 2, Console.CursorTop);
-            Console.WriteLine("]\n");
-
+            print("]\n\n");
 
             for (int i = 0; i < n; i++)
             {   // Quick & dirty approach, optimize later if necessary
                 if (i == 0 || i == 1 || i == 3 || i == 7|| i == 15)
                 {                    
-                    Console.Write(new string(' ', (int)(1.5*n - 1.7*i + 1)));
+                    print(new string(' ', (int)(1.5*n - 1.7*i + 1)));
                 }           
 
                 Console.Write("( " + array[i] + " )");
 
                 if (i == 0 || i == 2 || i == 6 || i == 14)
                 {
-
-                    print("");
+                    print("\n");
                 }
             }
-            print("");
-
+            
+            print("\n");
 
             Console.ReadLine();
         }
