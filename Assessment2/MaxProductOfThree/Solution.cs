@@ -9,7 +9,7 @@ namespace Assessment2
 
         public int solution(int[] A)
         {
-            //int[] sorted = new SortedSet<int>(A).ToArray();
+            //int[] sorted = new SortedSet<int>(A).ToArray(); // API solution
             int[] sorted = HeapSort(A);
 
             int leftTupleProduct = sorted[0] * sorted[1];
@@ -19,7 +19,7 @@ namespace Assessment2
             return largestTupleProduct * A.Last();
         }
 
-        // Worst-case time complexity: O(n*log n)    
+        // Worst-case time complexity: O(n*log n)
         // Worst-case space complexity: O(1)
         public int[] HeapSort(int[] unsorted)
         {       
@@ -30,9 +30,8 @@ namespace Assessment2
                 (sorted[0], sorted[n]) = (sorted[n], sorted[0]);
 
                 sorted = Heapify(sorted, 0, n);
-
-                print("n = " + n + "  ");
-                DrawHeap(sorted);
+                
+                DrawHeap(sorted, n);
             }            
 
             return sorted;
@@ -64,7 +63,7 @@ namespace Assessment2
                          left : right;
 
             if (array[larger] > array[i])
-            { // Swap
+            {
                 (array[i], array[larger]) = (array[larger], array[i]);
                 
                 array = Heapify(array, larger, n);
@@ -81,29 +80,36 @@ namespace Assessment2
             print("===============================");
         }
 
-        public static void DrawHeap(int[] array)
+        public static void DrawHeap(int[] array, int n)
         {
+            Console.Clear();
 
-            Console.Write("[");
-            foreach (int value in array) { Console.Write(value + " | "); }
+            print("(n = " + n + ") heapifying:");
+            
+            Console.Write("[");           
+            for (int i = 0; i < n; i++) { Console.Write(array[i] + " | "); }
+            for (int i = n; i < array.Length; i++) { Console.Write("(" + array[i] + ") | "); }
             Console.SetCursorPosition(Console.CursorLeft - 2, Console.CursorTop);
             Console.WriteLine("]\n");
 
 
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < n; i++)
             {   // Quick & dirty approach, optimize later if necessary
                 if (i == 0 || i == 1 || i == 3 || i == 7|| i == 15)
                 {                    
-                    Console.Write(new string(' ', (int)(1.5*array.Length - 1.7*i)));
+                    Console.Write(new string(' ', (int)(1.5*n - 1.7*i + 1)));
                 }           
 
                 Console.Write("( " + array[i] + " )");
 
                 if (i == 0 || i == 2 || i == 6 || i == 14)
                 {
-                    Console.WriteLine();
+
+                    print("");
                 }
-            }            
+            }
+            print("");
+
 
             Console.ReadLine();
         }
