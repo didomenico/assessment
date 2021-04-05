@@ -74,10 +74,10 @@ namespace Assessment2
         }        
 
         static public void Main(String[] args)
-        {
-            print("===============================\n");
-            print("MAX. TRIPLET PRODUCT: " + new Solution().solution(
-                new int[] { 5, 97, 64, -93, 37, 90, -102 } ).ToString("N0") + "\n");
+        {            
+            print("===============================\n" +
+                  "MAX. TRIPLET PRODUCT: " + new Solution().solution(
+                    new int[] { 5, 97, 64, -93, 37, 90, -102 } ).ToString("N0"));
             print("===============================");
         }
 
