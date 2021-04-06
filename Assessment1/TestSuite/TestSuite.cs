@@ -27,15 +27,15 @@ namespace Assessment1
         public void TestSequenceAnalysis()
         {
             Assert.AreEqual("", SequenceAnalysis.Order(""));
-            
-            Assert.AreEqual("abc", SequenceAnalysis.Order(""));
-            Assert.AreEqual("abc cba", SequenceAnalysis.Order(""));
-            Assert.AreEqual("aBc CBa", SequenceAnalysis.Order(""));
+
+            Assert.AreEqual("", SequenceAnalysis.Order("abc"));
+            Assert.AreEqual("", SequenceAnalysis.Order("abc cba"));
+            Assert.AreEqual("", SequenceAnalysis.Order("aBc CBa"));
 
             Assert.AreEqual("A", SequenceAnalysis.Order("A"));
             Assert.AreEqual("A", SequenceAnalysis.Order("dbc A"));
 
-            Assert.AreEqual("ELMOR", SequenceAnalysis.Order("Words W1TH NUMB3RS D0N'T W0RK ipsem LOREM"));
+            Assert.AreEqual("ELMOR", SequenceAnalysis.Order("Words W1TH NUMB3RS D0N'T W0RK ipsem LOROEMO"));
         }
     }
 }

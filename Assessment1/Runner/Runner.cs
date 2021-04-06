@@ -5,17 +5,17 @@ namespace Assessment1
 {    
     public class Runner
     {
-        static readonly Action<string> print = Console.WriteLine;
+        static readonly Action<string> print = Console.Write;
+        static readonly Action<string> println = Console.WriteLine;
 
         static public void Main(String[] args)
         {
-            print("=====================================");
-            print(" Welcome! Please type a key to chose:");
-            print("=====================================");
-            print("[F]ind the sum of all natural numbers that are a multiple of 3 or 5 below a limit provided as input.");
-            print("[O]rder characters of uppercase words in a sentence alphabetically.");
-            print("[E]xit");
-
+            println("=====================================");
+            println(" Welcome! Please type a key to chose:");
+            println("=====================================");
+            println("[F]ind the sum of all natural numbers that are a multiple of 3 or 5 below a limit provided as input.");
+            println("[O]rder characters of uppercase words in a sentence alphabetically.");
+            println("[E]xit");
             
             bool hasToClearConsole = false;
             string key;
@@ -27,8 +27,8 @@ namespace Assessment1
 
                 switch (key.First())
                 {
-                    case 'F': print(FindSum()); break;
-                    case 'O': print(OrderSentence()); break;                    
+                    case 'F': println(FindSum()); break;
+                    case 'O': println(OrderSentence()); break;                    
                 }
 
                 hasToClearConsole = (key == "F" || key == "O");
@@ -60,8 +60,7 @@ namespace Assessment1
             catch(Exception) // Catch-all for Format, ArgumentNull
             {                // and Overflow exceptions.
                 clearConsole(1);
-                FindSum();
-                return null;
+                return FindSum();
             }     
         }
 

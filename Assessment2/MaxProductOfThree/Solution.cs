@@ -3,15 +3,15 @@ using System.Linq;
 
 namespace Assessment2
 {
-    class Solution
+    public class Solution
     {   
         static readonly Action<string> print = Console.Write;
 
         static public void Main(String[] args)
         {
             print("===============================\n" +
-                  "MAX. TRIPLET PRODUCT: " + new Solution().solution(
-                    new int[]{-3, 1, 2, -2, 5, 6}).ToString("N0") + "\n" +
+                  "MAX. TRIPLET PRODUCT: " +
+                  new Solution().solution(new int[]{-3, 1, 2, -2, 5, 6}).ToString("N0") + "\n" +
                   "===============================\n");
         }
 

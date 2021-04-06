@@ -8,21 +8,14 @@ namespace Assessment1
         public static string Order(string sentence)
         {
             string[] wordArray = sentence.Split(' ');
-            string upperCaseLetters = "";
-
-            foreach(string word in wordArray)
-            {
-                if (word == word.ToUpper() &&
-                    word.Any(char.IsNumber) == false) 
-                {
-                    upperCaseLetters += word; 
-                }
-            }
+   
+            var upperCaseArray = wordArray.Where(x => x == x.ToUpper() && x.Any(char.IsNumber) == false);
+            string upperCaseLetters = string.Join("", upperCaseArray);
 
             char[] orderedUpperCase = upperCaseLetters.Distinct().ToArray();
-            Array.Sort(orderedUpperCase);
-            
-            return new string(orderedUpperCase);
+            Array.Sort(orderedUpperCase);    
+
+            return new string(orderedUpperCase);            
         }
     }
 }
