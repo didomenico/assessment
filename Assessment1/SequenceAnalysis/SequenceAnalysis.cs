@@ -9,13 +9,14 @@ namespace Assessment1
         {
             string[] wordArray = sentence.Split(' ');
    
-            var upperCaseArray = wordArray.Where(x => x == x.ToUpper() && x.Any(char.IsNumber) == false);
-            string upperCaseLetters = string.Join("", upperCaseArray);
+            var upperCaseWords = wordArray.Where(x => x == x.ToUpper() && 
+                                                 x.Any(char.IsNumber) == false);
+            
+            string concatenation = string.Join("", upperCaseWords);
 
-            char[] orderedUpperCase = upperCaseLetters.Distinct().ToArray();
-            Array.Sort(orderedUpperCase);    
+            var distinctSorted = concatenation.Distinct().OrderBy(letter => letter);
 
-            return new string(orderedUpperCase);            
+            return string.Join("", distinctSorted);
         }
     }
 }
