@@ -4,8 +4,7 @@ using System.Linq;
 namespace Assessment1
 {    
     public class Runner
-    {
-        static readonly Action<string> print = Console.Write;
+    {        
         static readonly Action<string> println = Console.WriteLine;
 
         static public void Main(String[] args)
@@ -19,6 +18,7 @@ namespace Assessment1
             
             bool hasToClearConsole = false;
             string key;
+
             do
             {
                 key = Console.ReadKey(true).KeyChar.ToString().ToUpper();
@@ -26,9 +26,9 @@ namespace Assessment1
                 if (hasToClearConsole) { clearConsole(2); }
 
                 switch (key.First())
-                {
-                    case 'F': println(FindSum()); break;
-                    case 'O': println(OrderSentence()); break;                    
+                {                    
+                    case 'F': println("Result: " + FindSum()); break;
+                    case 'O': println("Result: " + OrderSentence()); break;
                 }
 
                 hasToClearConsole = (key == "F" || key == "O");
@@ -48,20 +48,21 @@ namespace Assessment1
             Console.SetCursorPosition(0, Console.CursorTop - lines);
         }
 
-        private static string FindSum()
+        private static int FindSum()
         {
             Console.Write("Type number: ");
 
-            try
+            string input = Console.ReadLine();
+
+            if(input != null && input.All(char.IsNumber) == false)
             {
-                int limit = int.Parse(Console.ReadLine());
-                return "Result: " + SumOfMultiples.Until(limit);
-            }
-            catch(Exception) // Catch-all for Format, ArgumentNull
-            {                // and Overflow exceptions.
                 clearConsole(1);
                 return FindSum();
-            }     
+            }
+
+            int limit = int.Parse(input);
+            
+            return SumOfMultiples.Until(limit);
         }
 
         private static string OrderSentence()
@@ -69,7 +70,7 @@ namespace Assessment1
             Console.Write("Type sentence: ");
             string input = Console.ReadLine();
 
-            return "Result: " + SequenceAnalysis.Order(input);            
+            return SequenceAnalysis.Order(input);            
         }
     }
 }

@@ -10,8 +10,8 @@ namespace Assessment1
             string[] wordArray = sentence.Split(' ');
    
             var upperCaseWords = wordArray.Where(word => word == word.ToUpper() && 
-                                                 word.Any(char.IsNumber) == false); // (condition == false) more readable
-                                                                                    // than (!condition) in this case.
+                                                 word.Any(char.IsNumber) == false);
+                                                                                    
             string concatenation = string.Join("", upperCaseWords);
 
             var distinctSorted = concatenation.Distinct().OrderBy(letter => letter);
