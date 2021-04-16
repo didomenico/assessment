@@ -7,16 +7,16 @@ namespace Assessment1
     {
         public static string Order(string sentence)
         {
-            string[] wordArray = sentence.Split(' ');
-   
-            var upperCaseWords = wordArray.Where(word => word == word.ToUpper() && 
+            if (sentence == null || sentence == "") { return ""; }
+
+            string[] wordArray = sentence.Split(' ');   
+            var upperCaseArray = wordArray.Where(word => word == word.ToUpper() &&
                                                  word.Any(char.IsNumber) == false);
-                                                                                    
-            string concatenation = string.Join("", upperCaseWords);
+            var upperCaseDistinct = string.Join("", upperCaseArray).Distinct();
 
-            var distinctSorted = concatenation.Distinct().OrderBy(letter => letter);
+            var sorted = upperCaseDistinct.OrderBy(letter => letter);
 
-            return string.Join("", distinctSorted);
+            return string.Join("", sorted);
         }
     }
 }
